@@ -1,0 +1,39 @@
+{
+  "name": "codex-imagen",
+  "version": "0.1.0",
+  "description": "Generate images from Codex using the same API configuration and API key already stored in CODEX_HOME.",
+  "author": {
+    "name": "Local Codex User",
+    "email": "local@example.invalid",
+    "url": "https://openai.com/codex"
+  },
+  "homepage": "https://openai.com/codex",
+  "repository": "https://openai.com/codex",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "image-generation",
+    "gpt-image"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Codex Imagen",
+    "shortDescription": "Generate GPT images through Codex's existing API config.",
+    "longDescription": "Codex Imagen standardizes image generation from Codex by providing a skill and script that reuse CODEX_HOME config.toml, auth.json, and OpenAI-compatible API settings without a separate plugin-specific key.",
+    "developerName": "Local Codex User",
+    "category": "Productivity",
+    "capabilities": [
+      "Write",
+      "Image"
+    ],
+    "websiteURL": "https://openai.com/codex",
+    "privacyPolicyURL": "https://openai.com/policies/row-privacy-policy/",
+    "termsOfServiceURL": "https://openai.com/policies/row-terms-of-use/",
+    "defaultPrompt": [
+      "Generate an image from this prompt.",
+      "Create a transparent PNG asset.",
+      "Make image variants with Codex Imagen."
+    ],
+    "brandColor": "#3B82F6"
+  }
+}
