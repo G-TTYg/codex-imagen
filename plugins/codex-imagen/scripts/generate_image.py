@@ -31,8 +31,7 @@ def codex_home() -> pathlib.Path:
 def load_toml(path: pathlib.Path) -> dict:
     if not path.exists():
         return {}
-    with path.open("rb") as handle:
-        return tomllib.load(handle)
+    return tomllib.loads(path.read_text(encoding="utf-8-sig"))
 
 
 def load_json(path: pathlib.Path) -> dict:
