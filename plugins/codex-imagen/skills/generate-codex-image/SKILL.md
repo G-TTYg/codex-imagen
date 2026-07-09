@@ -1,11 +1,16 @@
 ---
 name: generate-codex-image
-description: Generate raster images from Codex with GPT image models using the existing Codex API configuration. Use when the user asks Codex to create, generate, render, or save an image, PNG, illustration, visual asset, sprite, icon, mockup, or image variant through the user's configured Codex API key and provider instead of requiring separate plugin credentials.
+description: Generate and edit raster images from Codex with GPT image models using the existing Codex API configuration. Use when the user asks Codex to create, generate, render, save, restyle, edit, or make variants of an image, PNG, illustration, visual asset, sprite, icon, mockup, or image file. Supports text-to-image, reference/source images, multiple image inputs, and masked edits through the user's configured Codex API key and provider instead of requiring separate plugin credentials.
 ---
 
 # Generate Codex Image
 
 Use the bundled script whenever an image should be generated through the user's Codex API settings.
+
+The script has two modes:
+
+- Text-only generation: omit `--image`; the script calls `/images/generations`.
+- Reference image editing: pass one or more `--image` values; the script calls `/images/edits`. Add `--mask` only when the user provides a mask for localized editing.
 
 ## Workflow
 
