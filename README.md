@@ -27,6 +27,12 @@ It then calls an OpenAI-compatible image generation endpoint:
 <base_url>/images/generations
 ```
 
+When one or more reference/source images are provided with `--image`, it automatically calls:
+
+```text
+<base_url>/images/edits
+```
+
 This works well when Codex is configured in API-key mode with an OpenAI-compatible provider.
 
 ## Repository Layout
@@ -106,9 +112,29 @@ cd plugins\codex-imagen
 python .\scripts\generate_image.py --prompt "A clean product mockup on white background" --output mockup.png
 ```
 
+Use a reference image:
+
+```powershell
+python plugins\codex-imagen\scripts\generate_image.py --prompt "Restyle this product photo as a clean studio render" --image product.png --output studio-render.png
+```
+
+Use multiple reference images:
+
+```powershell
+python plugins\codex-imagen\scripts\generate_image.py --prompt "Combine the character style from ref1 with the color palette from ref2" --image ref1.png --image ref2.png --output combined.png
+```
+
+Use a mask for localized edits:
+
+```powershell
+python plugins\codex-imagen\scripts\generate_image.py --prompt "Replace the background with a minimal white studio" --image photo.png --mask mask.png --output edited.png
+```
+
 Useful options:
 
 - `--model gpt-image-2`
+- `--image path\to\reference.png`
+- `--mask path\to\mask.png`
 - `--size 1024x1024`
 - `--quality auto`
 - `--background transparent`
