@@ -1,6 +1,6 @@
 {
   "name": "codex-imagen",
-  "version": "0.1.0",
+  "version": "0.1.0+codex.20260721131340",
   "description": "Generate images from Codex using the same API configuration and API key already stored in CODEX_HOME.",
   "author": {
     "name": "Local Codex User",
